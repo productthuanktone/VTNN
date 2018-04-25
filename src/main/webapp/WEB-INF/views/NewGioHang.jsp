@@ -74,8 +74,11 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="../quanly" class="nav-link">Đăng Nhập</a></li>
-					<li class="nav-item" id="giohang"><a class="nav-link" href="../giohang/"><i
-							class="fa fa-shopping-cart"></i><div class="sogiohang"><span>${soluonggiohang}</span></div></a></li>
+					<li class="nav-item" id="giohang"><a class="nav-link" href=""><i
+							class="fa fa-shopping-cart"></i>
+						<div class="sogiohang">
+								<span>${soluonggiohang}</span>
+							</div></a></li>
 
 				</ul>
 			</div>
@@ -110,52 +113,55 @@
 		<!--     	</div> -->
 		<div class="main">
 			<div class="container">
-				<div class="row" id="trangchitiet">
-					<div class="mymenu col-sm-2 col-md-2">
-						<h3 class="h">Danh Mục</h3>
-						<ul class="mymenu">
-							<c:forEach var="loaisp" items="${loaisp }">
-								<li><a href="#">${loaisp.getTenLSP() }</a></li>
+			<div class="row">
+				<div class="col-md-6" id="trangchitiet">
+				<h2 style="color: green;">Danh sach san pham</h2>
+					<table class="table">
+						<thead>
+							<tr>
+								<td>Hinh Anh</td>
+								<td>Ten San Pham</td>
+								<td>Gia</td>
+								<td>So Luong</td>
+								<td></td>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="giohang" items="${giohang}">
+								<tr>
+									<td><img class="hinhgiohang" alt="hinh"src='<c:url value="../resources/image/${giohang.getImage() }"/>' /></td>
+									<td>${giohang.getTenSanPham() }</td>
+									<td style="color: red">${giohang.getGia() }</td>
+									<td style="color: blue"><input type="number" value="${giohang.getSoluong() }"></td>
+									<td><i class="fa fa-times fa-lg"></i></td>
+								</tr>
 							</c:forEach>
-						</ul>
-					</div>
-					<div class="col-sm-8 col-md-8">
-						<div class="row">
-							<div class="col-sm-4 col-md-4">
-								<img alt="hinh"
-									src='<c:url value="/resources/image/${sanpham.getImage()}"/>'
-									class="hinh" data-hinh="${sanpham.getImage()}" />
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<h1 class="tensp" data-tensp="${sanpham.getTenSanPham()}">${sanpham.getTenSanPham()}</h1>
-								<c:forEach var="sanphamct" items="${sanpham.getGiatheongays() }">
-									<table class="table">
-										<thead>
-											<td><h4>id San Pham</h4></td>
-											<td><h4>Gia</h4></td>
-											<td><h4>So Luong</h4></td>
-											<td><h4>Gio Hang</h4></td>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="id" data-id="${sanphamct.getIdSanPham()}">${sanphamct.getIdSanPham()}</td>
-												<td class="gia" data-giatien="${sanphamct.getGia()}">${sanphamct.getGia()}</td>
-												<td class="soluong"
-													data-soluong="${sanphamct.getSoluong() }">${sanphamct.getSoluong() }</td>
-												<td><button type="button"
-														class="btn btn-outline-primary btn-round btn-giohang">Giỏ
-														Hàng</button></td>
-
-											</tr>
-											</c:forEach>
-										</tbody>
-									</table>
-							</div>
+						</tbody>
+					</table>
+					<h4>Tong Tien:<span style="color: red">150,000,000</span>VND</h4>
+				</div>
+				<div class="col-md-6" id="trangchitiet">
+				<h2 style="color: green">Thong tin khach Hang</h2>
+					<div class="font-group">
+					<form action="">
+						<label for="tenkh">Ten khach hang:</label>
+						<input id="tenkh" class="form-control">
+						<label for="sdt">So dien thoai:</label>
+						<input id="sdt" class="form-control">
+						<div class="radio">
+						  <label><input type="radio" name="optradio">Nhan hang tai cua hang</label>
 						</div>
-					</div>
-
-					<div class="col-sm-2 col-md-2">
-						<span>${sanpham.getChitietSanPham()}</span>
+						<div class="radio">
+						  <label><input type="radio" name="optradio">Nhan hang tai nha</label>
+						</div>
+						<label for="diachi">Dia chi:</label>
+						<input id="diachi" class="form-control">
+						<div class="form-group">
+						  <label for="comment">Ghi chu:</label>
+						  <textarea class="form-control" rows="5" id="comment"></textarea>
+						</div>
+						<input type="button" class="btn btn-primary" value="Dat Hang">
+						</form>
 					</div>
 				</div>
 			</div>

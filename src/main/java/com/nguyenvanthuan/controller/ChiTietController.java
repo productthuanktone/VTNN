@@ -20,8 +20,7 @@ import com.nguyenvanthuan.service.LoaiSanPhamService;
 import com.nguyenvanthuan.service.SanPhamService;
 
 @Controller
-@RequestMapping("chitiet")
-@SessionAttributes("giohang")
+@RequestMapping("chitiet/")
 public class ChiTietController {
 	@Autowired
 	SanPhamService sanPhamsv;
@@ -47,7 +46,6 @@ public class ChiTietController {
 		if (null != httpSession.getAttribute("giohang")) {
 			List<GioHang> giohangs = (List<GioHang>) httpSession.getAttribute("giohang");
 			modelMap.addAttribute("soluonggiohang", giohangs.size());
-			System.out.println("test gio hang tranh ci tiet : "+giohangs.size());
 		}
 		modelMap.addAttribute("sanpham", sanPham);
 		modelMap.addAttribute("loaisp", listloaisp);
