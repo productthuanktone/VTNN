@@ -38,7 +38,7 @@ public class APIController {
 
 	@GetMapping("themgiohang")
 	@ResponseBody
-	public void ThemGioHang(@RequestParam int idSanPham, @RequestParam String tensp, @RequestParam float gia,
+	public String ThemGioHang(@RequestParam int idSanPham, @RequestParam String tensp, @RequestParam float gia,
 			@RequestParam String image, @RequestParam int soluong, HttpSession httpSession) {
 		if (null == httpSession.getAttribute("giohang")) {
 			GioHang gioHang = new GioHang();
@@ -50,6 +50,7 @@ public class APIController {
 			gioHang.setSoluong(1);
 			gioHangs.add(gioHang);
 			httpSession.setAttribute("giohang", gioHangs);
+			return gioHangs.size()+"";
 		} else {
 			List<GioHang> listgiohang = (List<GioHang>) httpSession.getAttribute("giohang");
 			int vitri = KiemTraGioHang(listgiohang, idSanPham, gia, httpSession);
@@ -66,12 +67,12 @@ public class APIController {
 				int soluongmoi = listgiohang.get(vitri).getSoluong()+1;
 				listgiohang.get(vitri).setSoluong(soluongmoi);
 			}
-
+			return listgiohang.size()+"";
 		}
-		List<GioHang> listgiohang = (List<GioHang>) httpSession.getAttribute("giohang");
-		for (GioHang gioHang : listgiohang) {
-			System.out.println(gioHang.getTenSanPham() + "  " + gioHang.getGia() + "  " + gioHang.getSoluong());
-		}
+//		List<GioHang> listgiohang = (List<GioHang>) httpSession.getAttribute("giohang");
+//		for (GioHang gioHang : listgiohang) {
+//			System.out.println(gioHang.getTenSanPham() + "  " + gioHang.getGia() + "  " + gioHang.getSoluong());
+//		}
 
 	}
 
@@ -85,15 +86,15 @@ public class APIController {
 		}
 		return -1;
 	}
-	@GetMapping("soluonggiohang")
-	@ResponseBody
-	public String SoLuongGioHang(HttpSession httpSession,ModelMap modelMap) {
-		if(null!=httpSession.getAttribute("giohang")){
-			List<GioHang> giohangs=(List<GioHang>) httpSession.getAttribute("giohang");
-			System.out.println("test gio hang"+giohangs.size());
-			return giohangs.size()+"";
-		}
-		
-		return "";
-		}
+//	@GetMapping("soluonggiohang")
+//	@ResponseBody
+//	public String SoLuongGioHang(HttpSession httpSession,ModelMap modelMap) {
+//		if(null!=httpSession.getAttribute("giohang")){
+//			List<GioHang> giohangs=(List<GioHang>) httpSession.getAttribute("giohang");
+//			System.out.println("test gio hang "+giohangs.size());
+//			return giohangs.size()+"";
+//		}
+//		
+//		return "";
+//		}
 }

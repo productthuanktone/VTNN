@@ -28,15 +28,26 @@ public class ChiTietController {
 	@Autowired
 	LoaiSanPhamService loaispservice;
 
+	@GetMapping
+	@Transactional
+	public String Default(ModelMap modelMap, HttpSession httpSession) {
+		if (null != httpSession.getAttribute("giohang")) {
+			List<GioHang> giohangs = (List<GioHang>) httpSession.getAttribute("giohang");
+			modelMap.addAttribute("soluonggiohang", giohangs.size());
+		}
+		return "NewChiTiet";
+	}
+
 	@GetMapping("/{masanpham}")
 	@Transactional
-	public String TrangChiTiet(@PathVariable int masanpham, ModelMap modelMap,HttpSession httpSession) {
+	public String TrangChiTiet(@PathVariable int masanpham, ModelMap modelMap, HttpSession httpSession) {
 		System.out.println("ma san phan" + masanpham);
 		SanPham sanPham = sanPhamsv.LayDanhSachSanPhamCT(masanpham);
 		List<LoaiSanPham> listloaisp = loaispservice.DanhSachLoaiSP();
-		if(null!=httpSession.getAttribute("giohang")){
-			List<GioHang> giohangs=(List<GioHang>) httpSession.getAttribute("giohang");
-			 modelMap.addAttribute("soluonggiohan", giohangs.size());
+		if (null != httpSession.getAttribute("giohang")) {
+			List<GioHang> giohangs = (List<GioHang>) httpSession.getAttribute("giohang");
+			modelMap.addAttribute("soluonggiohang", giohangs.size());
+			System.out.println("test gio hang tranh ci tiet : "+giohangs.size());
 		}
 		modelMap.addAttribute("sanpham", sanPham);
 		modelMap.addAttribute("loaisp", listloaisp);

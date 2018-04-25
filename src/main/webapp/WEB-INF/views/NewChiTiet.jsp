@@ -74,8 +74,8 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="../quanly" class="nav-link">Đăng Nhập</a></li>
-					<li class="nav-item"><a class="nav-link"><i
-							class="fa fa-shopping-cart"></i><div id="sogiohang"><span >${soluonggiohan }</span></div></a></li>
+					<li class="nav-item" id="giohang"><a class="nav-link"><i
+							class="fa fa-shopping-cart"></i><div class="sogiohang"><span>${soluonggiohang }</span></div></a></li>
 
 				</ul>
 			</div>

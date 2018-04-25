@@ -71,10 +71,10 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="quanly" class="nav-link">Đăng Nhập</a></li>
-					<li class="nav-item">${soluonggiohan}<i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i></li>
+					<li class="nav-item"><a class="nav-link"><i
+							class="fa fa-shopping-cart"></i><div id="sogiohang"><span >${soluonggiohan}</span></div></a></li>
 
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="wrapper">
