@@ -85,4 +85,15 @@ public class APIController {
 		}
 		return -1;
 	}
+	@GetMapping("soluonggiohang")
+	@ResponseBody
+	public String SoLuongGioHang(HttpSession httpSession,ModelMap modelMap) {
+		if(null!=httpSession.getAttribute("giohang")){
+			List<GioHang> giohangs=(List<GioHang>) httpSession.getAttribute("giohang");
+			System.out.println("test gio hang"+giohangs.size());
+			return giohangs.size()+"";
+		}
+		
+		return "";
+		}
 }

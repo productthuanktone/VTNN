@@ -38,6 +38,14 @@ $(document).ready(function() {
 			}
 			
 			
+		}).done(function(){
+			$.ajax({
+				url:"/VTNN/api/soluonggiohang",
+				type:"GET",
+				success:function(value){
+					$("#sogiohang").html("<span>" + value + "</span>")
+				}
+			});
 		});
 	});
-})
+});

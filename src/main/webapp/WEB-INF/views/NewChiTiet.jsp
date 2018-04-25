@@ -33,7 +33,8 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700'
 	rel='stylesheet' type='text/css'>
-<link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../resources/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 <link href="../resources/assets/css/nucleo-icons.css" rel="stylesheet" />
 
 </head>
@@ -73,7 +74,9 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="../quanly" class="nav-link">Đăng Nhập</a></li>
-						<li class="nav-item"><a><i class="fa fa-shopping-cart"></i><span>${soluonggiohan }</span></a></li>
+					<li class="nav-item"><a class="nav-link"><i
+							class="fa fa-shopping-cart"></i><div id="sogiohang"><span >${soluonggiohan }</span></div></a></li>
+
 				</ul>
 			</div>
 		</div>
@@ -111,8 +114,8 @@
 					<div class="mymenu col-sm-2 col-md-2">
 						<h3 class="h">Danh Mục</h3>
 						<ul class="mymenu">
-						<c:forEach var="loaisp" items="${loaisp }">
-							<li><a href="#">${loaisp.getTenLSP() }</a></li>
+							<c:forEach var="loaisp" items="${loaisp }">
+								<li><a href="#">${loaisp.getTenLSP() }</a></li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -121,12 +124,12 @@
 							<div class="col-sm-4 col-md-4">
 								<img alt="hinh"
 									src='<c:url value="/resources/image/${sanpham.getImage()}"/>'
-									class="hinh" data-hinh="${sanpham.getImage()}"/>
+									class="hinh" data-hinh="${sanpham.getImage()}" />
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<h1 class="tensp" data-tensp="${sanpham.getTenSanPham()}">${sanpham.getTenSanPham()}</h1>
 								<c:forEach var="sanphamct" items="${sanpham.getGiatheongays() }">
-								<table class="table">
+									<table class="table">
 										<thead>
 											<td><h4>id San Pham</h4></td>
 											<td><h4>Gia</h4></td>
@@ -137,8 +140,10 @@
 											<tr>
 												<td class="id" data-id="${sanphamct.getIdSanPham()}">${sanphamct.getIdSanPham()}</td>
 												<td class="gia" data-giatien="${sanphamct.getGia()}">${sanphamct.getGia()}</td>
-												<td class="soluong" data-soluong="${sanphamct.getSoluong() }">${sanphamct.getSoluong() }</td>
-												<td><button type="button"class="btn btn-outline-primary btn-round btn-giohang">Giỏ
+												<td class="soluong"
+													data-soluong="${sanphamct.getSoluong() }">${sanphamct.getSoluong() }</td>
+												<td><button type="button"
+														class="btn btn-outline-primary btn-round btn-giohang">Giỏ
 														Hàng</button></td>
 
 											</tr>
