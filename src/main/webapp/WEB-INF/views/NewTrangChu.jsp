@@ -30,12 +30,7 @@
 <link rel="stylesheet"
 	href='<c:url value="resources/assets/css/demo.css"/>' />
 <!--     Fonts and icons     -->
-<link
-	href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700'
-	rel='stylesheet' type='text/css'>
-<link
-	href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
-	rel="stylesheet">
+<link href="resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet"
 	href='<c:url value="resources/assets/css/nucleo-icons.css"/>' />
 
@@ -76,14 +71,12 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="quanly" class="nav-link">Đăng Nhập</a></li>
-					<li class="nav-item"><a><i class="fal fa-cart-arrow-down"></i>Giỏ
-							Hàng</a></li>
+					<li class="nav-item"><a><i class="fa fa-shopping-cart"></i>${soluonggiohan }</a></li>
 
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="wrapper">
 		<!--         <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')"> -->
 		<!--             <div class="filter"></div> -->
 		<!--     		<div class="content-center"> -->
@@ -153,7 +146,8 @@
 											<div class="sanpham wow bounceIn">
 												<img alt="hinh"
 													src='<c:url value="/resources/image/${sanpham.getImage() }"/>' /><br>
-												<span>${sanpham.getTenSanPham() }</span> <br></div>
+												<span>${sanpham.getTenSanPham() }</span> <br>
+											</div>
 										</a>
 
 									</div>

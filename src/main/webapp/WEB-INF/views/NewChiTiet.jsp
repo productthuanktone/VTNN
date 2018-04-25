@@ -33,9 +33,7 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700'
 	rel='stylesheet' type='text/css'>
-<link
-	href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
-	rel="stylesheet">
+<link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="../resources/assets/css/nucleo-icons.css" rel="stylesheet" />
 
 </head>
@@ -75,6 +73,7 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="../quanly" class="nav-link">Đăng Nhập</a></li>
+						<li class="nav-item"><a><i class="fa fa-shopping-cart"></i><span>${soluonggiohan }</span></a></li>
 				</ul>
 			</div>
 		</div>
