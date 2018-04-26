@@ -8,15 +8,16 @@ import javax.servlet.http.HttpSession;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.nguyenvanthuan.entity.GioHang;
-import com.nguyenvanthuan.entity.NhanVien;
+
 import com.nguyenvanthuan.service.NhanVienService;
 
 @Controller
@@ -36,6 +37,20 @@ public class APIController {
 		return "DanhSachNhanVien";
 	}
 
+	@GetMapping("capnhatgiohang1")
+	@ResponseBody
+	public String CapNhatGioHang111(@RequestParam int soluong, @RequestParam int idsp, @RequestParam float gia,
+			HttpSession httpSession) {
+		System.out.println(soluong + "tttt" + idsp + "gggg" + gia);
+		if (null != httpSession.getAttribute("giohang")) {
+			List<GioHang> listgiohangs = (List<GioHang>) httpSession.getAttribute("giohang");
+			int vitri = KiemTraGioHang(listgiohangs, idsp, gia, httpSession);
+			System.out.println(listgiohangs.get(vitri).getGia() + "====" + listgiohangs.get(vitri).getSoluong());
+			listgiohangs.get(vitri).setSoluong(soluong);
+		}
+		return "cc";
+	}
+
 	@GetMapping("themgiohang")
 	@ResponseBody
 	public String ThemGioHang(@RequestParam int idSanPham, @RequestParam String tensp, @RequestParam float gia,
@@ -50,7 +65,7 @@ public class APIController {
 			gioHang.setSoluong(1);
 			gioHangs.add(gioHang);
 			httpSession.setAttribute("giohang", gioHangs);
-			return gioHangs.size()+"";
+			return gioHangs.size() + "";
 		} else {
 			List<GioHang> listgiohang = (List<GioHang>) httpSession.getAttribute("giohang");
 			int vitri = KiemTraGioHang(listgiohang, idSanPham, gia, httpSession);
@@ -64,37 +79,38 @@ public class APIController {
 				gioHang.setSoluong(1);
 				listgiohang.add(gioHang);
 			} else {
-				int soluongmoi = listgiohang.get(vitri).getSoluong()+1;
+				int soluongmoi = listgiohang.get(vitri).getSoluong() + 1;
 				listgiohang.get(vitri).setSoluong(soluongmoi);
 			}
-			return listgiohang.size()+"";
+			return listgiohang.size() + "";
 		}
-//		List<GioHang> listgiohang = (List<GioHang>) httpSession.getAttribute("giohang");
-//		for (GioHang gioHang : listgiohang) {
-//			System.out.println(gioHang.getTenSanPham() + "  " + gioHang.getGia() + "  " + gioHang.getSoluong());
-//		}
+		// List<GioHang> listgiohang = (List<GioHang>)
+		// httpSession.getAttribute("giohang");
+		// for (GioHang gioHang : listgiohang) {
+		// System.out.println(gioHang.getTenSanPham() + " " + gioHang.getGia() + " " +
+		// gioHang.getSoluong());
+		// }
 
 	}
 
-	private int KiemTraGioHang(List<GioHang> listgiohang, int idSanPham, float gia,
-			HttpSession httpSession) {
+	private int KiemTraGioHang(List<GioHang> listgiohang, int idSanPham, float gia, HttpSession httpSession) {
 		for (int i = 0; i < listgiohang.size(); i++) {
-			if (listgiohang.get(i).getIdSanPham() == idSanPham
-					&& listgiohang.get(i).getGia() == gia) {
+			if (listgiohang.get(i).getIdSanPham() == idSanPham && listgiohang.get(i).getGia() == gia) {
 				return i;
 			}
 		}
 		return -1;
 	}
-//	@GetMapping("soluonggiohang")
-//	@ResponseBody
-//	public String SoLuongGioHang(HttpSession httpSession,ModelMap modelMap) {
-//		if(null!=httpSession.getAttribute("giohang")){
-//			List<GioHang> giohangs=(List<GioHang>) httpSession.getAttribute("giohang");
-//			System.out.println("test gio hang "+giohangs.size());
-//			return giohangs.size()+"";
-//		}
-//		
-//		return "";
-//		}
+	// @GetMapping("soluonggiohang")
+	// @ResponseBody
+	// public String SoLuongGioHang(HttpSession httpSession,ModelMap modelMap) {
+	// if(null!=httpSession.getAttribute("giohang")){
+	// List<GioHang> giohangs=(List<GioHang>) httpSession.getAttribute("giohang");
+	// System.out.println("test gio hang "+giohangs.size());
+	// return giohangs.size()+"";
+	// }
+	//
+	// return "";
+	// }
+
 }

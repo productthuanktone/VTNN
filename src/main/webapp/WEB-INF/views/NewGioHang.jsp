@@ -114,15 +114,15 @@
 		<div class="main">
 			<div class="container">
 			<div class="row">
-				<div class="col-md-6" id="trangchitiet">
-				<h2 style="color: green;">Danh sach san pham</h2>
+				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" id="trangchitiet">
+				<h2 style="color: green;">Danh sách Sản Phẩm</h2>
 					<table class="table">
 						<thead>
 							<tr>
-								<td>Hinh Anh</td>
-								<td>Ten San Pham</td>
-								<td>Gia</td>
-								<td>So Luong</td>
+								<td>Hình Ảnh</td>
+								<td>Tên Sản Phẩm</td>
+								<td>Giá</td>
+								<td>Số Lượng</td>
 								<td></td>
 							</tr>
 						</thead>
@@ -130,31 +130,31 @@
 							<c:forEach var="giohang" items="${giohang}">
 								<tr>
 									<td><img class="hinhgiohang" alt="hinh"src='<c:url value="../resources/image/${giohang.getImage() }"/>' /></td>
-									<td>${giohang.getTenSanPham() }</td>
-									<td style="color: red">${giohang.getGia() }</td>
-									<td style="color: blue"><input type="number" value="${giohang.getSoluong() }"></td>
+									<td class="tensp" data-idsanpham="${giohang.getIdSanPham() }">${giohang.getTenSanPham() }</td>
+									<td style="color: red" class="giatien" data-giatien="${giohang.getGia() }">${giohang.getGia()}</td>
+									<td style="color: blue"><input min="1"class="soluongcuagiohang" type="number"  value="${giohang.getSoluong() }"></td>
 									<td><i class="fa fa-times fa-lg"></i></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
-					<h4>Tong Tien:<span style="color: red">150,000,000</span>VND</h4>
+					<h4>Tong Tien:<span style="color: red" id="tongtiensp"> </span> VNĐ</h4>
 				</div>
-				<div class="col-md-6" id="trangchitiet">
-				<h2 style="color: green">Thong tin khach Hang</h2>
+				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" id="trangchitiet">
+				<h2 style="color: green">Thông tin khách hàng</h2>
 					<div class="font-group">
 					<form action="">
-						<label for="tenkh">Ten khach hang:</label>
+						<label for="tenkh">Tên khách hàng:</label>
 						<input id="tenkh" class="form-control">
-						<label for="sdt">So dien thoai:</label>
+						<label for="sdt">Số điện thoại:</label>
 						<input id="sdt" class="form-control">
 						<div class="radio">
-						  <label><input type="radio" name="optradio">Nhan hang tai cua hang</label>
+						  <label><input type="radio" name="optradio"> Nhận hàng tại cửa hàng</label>
 						</div>
 						<div class="radio">
-						  <label><input type="radio" name="optradio">Nhan hang tai nha</label>
+						  <label><input type="radio" name="optradio"> Nhận hàng tại nhà</label>
 						</div>
-						<label for="diachi">Dia chi:</label>
+						<label for="diachi">Địa chỉ:</label>
 						<input id="diachi" class="form-control">
 						<div class="form-group">
 						  <label for="comment">Ghi chu:</label>
