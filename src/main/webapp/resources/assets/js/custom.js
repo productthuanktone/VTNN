@@ -62,21 +62,23 @@ $(document).ready(
 				$(".giatien").each(
 						function() {
 							var gia = $(this).text();
-							var soluong=$(this).closest("tr").find(".soluongcuagiohang").val();
-							var tongtien=parseInt(gia)*soluong;
-							var format1 = parseFloat(tongtien).toFixed().replace(
-									/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-							
+							var soluong = $(this).closest("tr").find(
+									".soluongcuagiohang").val();
+							var tongtien = parseInt(gia) * soluong;
+							var format1 = parseFloat(tongtien).toFixed()
+									.replace(/(\d)(?=(\d{3})+\.)/g, "$1,")
+									.toString();
+
 							if (!ischange) {
 								$(this).html(format1);
 							}
-							
+
 							tongtiensp = tongtiensp + parseFloat(tongtien);
-						})
-						
-						var formatsp = tongtiensp.toFixed(3).replace(
-								/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-						$("#tongtiensp").html(" " + formatsp + "");
+						});
+
+				var formatsp = tongtiensp.toFixed(3).replace(
+						/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+				$("#tongtiensp").html(" " + formatsp + "");
 			}
 
 			$(".soluongcuagiohang").change(
@@ -91,37 +93,59 @@ $(document).ready(
 								/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
 						$(this).closest("tr").find(".giatien").html(format);
 						Gantongtien(true);
-						 $.ajax({
-						url : "/VTNN/api/capnhatgiohang1",
-						 type : "GET",
-						 data : {
-						 soluong:soluong,
-						 idsp:id,
-						 gia:gia1,
-						 },
-						 success : function(value) {
-						
-						 }
-						 });
+						$.ajax({
+							url : "/VTNN/api/capnhatgiohang1",
+							type : "GET",
+							data : {
+								soluong : soluong,
+								idsp : id,
+								gia : gia1,
+							},
+							success : function(value) {
+
+							}
+						});
 					});
-//			$(".soluongcuagiohang").blur(
-//					function() {
-//						var soluong = ($(this).val());
-//						var id = $(this).closest("tr").find(".tensp").attr("data-idsanpham");
-//						var gia = $(this).closest("tr").find(".giatien").attr("data-giatien");
-//						
-//								$.ajax({
-//							url :"/VTNN/api/capnhatgiohang",
-//							type :"POST",
-//							data : {
-//								soluong : soluong,
-//								idsp : id,
-//								gia : gia,
-//							},
-//							success : function(value) {
-//
-//							}
-//						});
-//					});
+			$(".btnxoa").click(
+					function() {
+						var selt = $(this);
+						var id = $(this).closest("tr").find(".tensp").attr(
+								"data-idsanpham");
+						var gia = $(this).closest("tr").find(".giatien").attr(
+								"data-giatien");
+						$.ajax({
+							url : "/VTNN/api/xoagiohang",
+							type : "GET",
+							data : {
+								idsp : id,
+								gia : gia,
+							},
+							success : function(value) {
+								selt.closest("tr").remove();
+								Gantongtien();
+							}
+						});
+					})
+			// $(".soluongcuagiohang").blur(
+			// function() {
+			// var soluong = ($(this).val());
+			// var id =
+			// $(this).closest("tr").find(".tensp").attr("data-idsanpham");
+			// var gia =
+			// $(this).closest("tr").find(".giatien").attr("data-giatien");
+			//						
+			// $.ajax({
+			// url :"/VTNN/api/capnhatgiohang",
+			// type :"POST",
+			// data : {
+			// soluong : soluong,
+			// idsp : id,
+			// gia : gia,
+			//							},
+			//							success : function(value) {
+			//
+			//							}
+			//						});
+			//					});
 
 		});

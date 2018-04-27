@@ -52,8 +52,7 @@
 						class="navbar-toggler-bar"></span> <span
 						class="navbar-toggler-bar"></span>
 				</button>
-				<a class="navbar-brand" href="https://www.creative-tim.com">Paper
-					Kit 2</a>
+				<a class="navbar-brand" href="/VTNN/">Trang Chu</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav ml-auto">
@@ -133,7 +132,7 @@
 									<td class="tensp" data-idsanpham="${giohang.getIdSanPham() }">${giohang.getTenSanPham() }</td>
 									<td style="color: red" class="giatien" data-giatien="${giohang.getGia() }">${giohang.getGia()}</td>
 									<td style="color: blue"><input min="1"class="soluongcuagiohang" type="number"  value="${giohang.getSoluong() }"></td>
-									<td><i class="fa fa-times fa-lg"></i></td>
+									<td class="btnxoa"><i class="fa fa-times fa-lg"></i></td>
 								</tr>
 							</c:forEach>
 						</tbody>

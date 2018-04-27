@@ -39,7 +39,7 @@ public class APIController {
 
 	@GetMapping("capnhatgiohang1")
 	@ResponseBody
-	public String CapNhatGioHang111(@RequestParam int soluong, @RequestParam int idsp, @RequestParam float gia,
+	public void CapNhatGioHang111(@RequestParam int soluong, @RequestParam int idsp, @RequestParam float gia,
 			HttpSession httpSession) {
 		System.out.println(soluong + "tttt" + idsp + "gggg" + gia);
 		if (null != httpSession.getAttribute("giohang")) {
@@ -48,7 +48,17 @@ public class APIController {
 			System.out.println(listgiohangs.get(vitri).getGia() + "====" + listgiohangs.get(vitri).getSoluong());
 			listgiohangs.get(vitri).setSoluong(soluong);
 		}
-		return "cc";
+		
+	}
+	@GetMapping("xoagiohang")
+	@ResponseBody
+	public void xoaGioHang( @RequestParam int idsp, @RequestParam float gia,HttpSession httpSession) {
+		if (null != httpSession.getAttribute("giohang")) {
+			List<GioHang> listgiohangs = (List<GioHang>) httpSession.getAttribute("giohang");
+			int vitri = KiemTraGioHang(listgiohangs, idsp, gia, httpSession);
+			listgiohangs.remove(vitri);
+		}
+		
 	}
 
 	@GetMapping("themgiohang")
