@@ -142,24 +142,24 @@
 				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" id="trangchitiet">
 				<h2 style="color: green">Thông tin khách hàng</h2>
 					<div class="font-group">
-					<form action="">
+					<form action="" method="POST">
 						<label for="tenkh">Tên khách hàng:</label>
-						<input id="tenkh" class="form-control">
+						<input id="tenkh" name="tenkh" class="form-control">
 						<label for="sdt">Số điện thoại:</label>
-						<input id="sdt" class="form-control">
+						<input id="sdt" name="sdt" class="form-control">
 						<div class="radio">
-						  <label><input type="radio" name="optradio"> Nhận hàng tại cửa hàng</label>
+						  <label class="active"><input type="radio" name="hinhthucgiaohang" checked="checked" value="Tai Cua Hang"> Nhận hàng tại cửa hàng</label>
 						</div>
 						<div class="radio">
-						  <label><input type="radio" name="optradio"> Nhận hàng tại nhà</label>
+						  <label><input type="radio" name="hinhthucgiaohang" value="Tai Nha"> Nhận hàng tại nhà</label>
 						</div>
-						<label for="diachi">Địa chỉ:</label>
-						<input id="diachi" class="form-control">
+						<label for="diachigiaohang">Địa chỉ:</label>
+						<input id="diachigiaohang" name="diachigiaohang" class="form-control">
 						<div class="form-group">
 						  <label for="comment">Ghi chu:</label>
-						  <textarea class="form-control" rows="5" id="comment"></textarea>
+						  <textarea class="form-control" rows="5" id="comment" name="ghichu"></textarea>
 						</div>
-						<input type="button" class="btn btn-primary" value="Dat Hang">
+						<input type="submit" class="btn btn-primary" value="Đặt Hàng">
 						</form>
 					</div>
 				</div>

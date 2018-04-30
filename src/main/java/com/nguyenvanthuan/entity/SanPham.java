@@ -22,6 +22,9 @@ public class SanPham {
 	@OneToMany(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "idSanPham")
 	Set<GiaTheoNgay> giatheongays;
+	@OneToMany(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name = "idSanPham")
+	Set<ChiTietHoaDon> danhsachchitiethoadonsp;
 	public Set<GiaTheoNgay> getGiatheongays() {
 		return giatheongays;
 	}

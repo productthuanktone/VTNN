@@ -13,7 +13,7 @@ public class GiaTheoNgay {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int idNgay;
 	Date ngay;
-	float Gia;
+	String Gia;
 	int idSanPham;
 	int soluong;
 	
@@ -29,10 +29,10 @@ public class GiaTheoNgay {
 	public void setNgay(Date ngay) {
 		this.ngay = ngay;
 	}
-	public float getGia() {
+	public String getGia() {
 		return Gia;
 	}
-	public void setGia(float gia) {
+	public void setGia(String gia) {
 		Gia = gia;
 	}
 	public int getIdSanPham() {
@@ -48,7 +48,7 @@ public class GiaTheoNgay {
 	public void setIdNgay(int idNgay) {
 		this.idNgay = idNgay;
 	}
-	public GiaTheoNgay(Date ngay, float gia, int idSanPham) {
+	public GiaTheoNgay(Date ngay, String gia, int idSanPham) {
 		super();
 		this.ngay = ngay;
 		Gia = gia;
@@ -57,7 +57,7 @@ public class GiaTheoNgay {
 	public GiaTheoNgay() {
 		super();
 	}
-	public GiaTheoNgay(float gia, int idSanPham) {
+	public GiaTheoNgay(String gia, int idSanPham) {
 		super();
 		Gia = gia;
 		this.idSanPham = idSanPham;
