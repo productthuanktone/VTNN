@@ -6,13 +6,12 @@
 
 <head>
 <meta charset="utf-8" />
-<link rel="icon" type="image/png"
-	href="../resources/assets/img/favicon.ico">
+<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 <link rel="apple-touch-icon" sizes="76x76"
-	href="../resources/assets/img/apple-icon.png">
+	href="assets/img/apple-icon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>Paper Kit 2 by Creative Tim</title>
+<title>Vật Tư Nông Nghiệp</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -20,22 +19,20 @@
 <meta name="viewport" content="width=device-width" />
 
 <!-- Bootstrap core CSS     -->
-<link href="../resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet"
-	href='<c:url value="../resources/Style/style.css"/>' />
-<link href="../resources/assets/css/paper-kit.css?v=2.1.0"
-	rel="stylesheet" />
+	href='<c:url value="../resources/assets/css/bootstrap.min.css"/>' />
+<link rel="stylesheet" href='<c:url value="../resources/Style/style.css"/>' />
+<link rel="stylesheet"
+	href='<c:url value="../resources/assets/css/paper-kit.css?v=2.1.0"/>' />
+
 
 <!--  CSS for Demo Purpose, don't include it in your project     -->
-<link href="../resources/assets/css/demo.css" rel="stylesheet" />
-
+<link rel="stylesheet"
+	href='<c:url value="../resources/assets/css/demo.css"/>' />
 <!--     Fonts and icons     -->
-<link
-	href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700'
-	rel='stylesheet' type='text/css'>
-<link href="../resources/vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link href="../resources/assets/css/nucleo-icons.css" rel="stylesheet" />
+<link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href='<c:url value="../resources/assets/css/nucleo-icons.css"/>' />
 
 </head>
 
@@ -52,7 +49,7 @@
 						class="navbar-toggler-bar"></span> <span
 						class="navbar-toggler-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/VTNN/">Trang Chu</a>
+				<a class="navbar-brand" href="/VTNN/">Trang Chủ</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav ml-auto">
@@ -64,17 +61,17 @@
 					</a></li>
 					<li class="nav-item"><a
 						href="documentation/tutorial-components.html" target="_blank"
-						class="nav-link"> Documentation</a></li>
+						class="nav-link"> Chăm sóc khách hàng</a></li>
 					<li class="nav-item"><a
 						href="documentation/tutorial-components.html" target="_blank"
-						class="nav-link"> Documentation</a></li>
+						class="nav-link"> Liên hệ</a></li>
 					<li class="nav-item"><a style="color: blue !important"
 						href="documentation/tutorial-components.html" class="nav-link">
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
-						href="../quanly" class="nav-link">Đăng Nhập</a></li>
+						href="quanly" class="nav-link">Đăng Nhập</a></li>
 					<li class="nav-item" id="giohang"><a class="nav-link" href="../giohang/"><i
-							class="fa fa-shopping-cart"></i><div class="sogiohang"><span>${soluonggiohang}</span></div></a></li>
+							class="fa fa-shopping-cart"></i><div class="sogiohang"><span>${soluonggiohang }</span></div></a></li>
 
 				</ul>
 			</div>

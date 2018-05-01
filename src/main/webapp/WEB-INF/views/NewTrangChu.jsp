@@ -11,7 +11,7 @@
 	href="assets/img/apple-icon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>Paper Kit 2 by Creative Tim</title>
+<title>Vật Tư Nông Nghiệp</title>
 
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
@@ -49,8 +49,7 @@
 						class="navbar-toggler-bar"></span> <span
 						class="navbar-toggler-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/VTNN/">Paper
-					Kit 2</a>
+				<a class="navbar-brand" href="/VTNN/">Trang Chủ</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav ml-auto">
@@ -62,10 +61,10 @@
 					</a></li>
 					<li class="nav-item"><a
 						href="documentation/tutorial-components.html" target="_blank"
-						class="nav-link"> Documentation</a></li>
+						class="nav-link"> Chăm sóc khách hàng</a></li>
 					<li class="nav-item"><a
 						href="documentation/tutorial-components.html" target="_blank"
-						class="nav-link"> Documentation</a></li>
+						class="nav-link"> Liên hệ</a></li>
 					<li class="nav-item"><a style="color: blue !important"
 						href="documentation/tutorial-components.html" class="nav-link">
 							Đăng Ký</a></li>
@@ -109,40 +108,17 @@
 				<div class="container">
 					<br />
 					<hr>
-					<div class="row">
-						<div class="col-sm-6 col-lg-3">
-							<div class="tim-title">
-								<h3>Checkboxes</h3>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label"> <input
-									class="form-check-input" type="checkbox" value="">
-									Unchecked <span class="form-check-sign"></span>
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label"> <input
-									class="form-check-input" type="checkbox" value="" checked>
-									Checked <span class="form-check-sign"></span>
-								</label>
-							</div>
-							<div class="form-check disabled">
-								<label class="form-check-label"> <input
-									class="form-check-input" type="checkbox" value="" disabled>
-									Disabled unchecked <span class="form-check-sign"></span>
-								</label>
-							</div>
-							<div class="form-check disabled">
-								<label class="form-check-label"> <input
-									class="form-check-input" type="checkbox" value="" disabled
-									checked> Disabled checked <span class="form-check-sign"></span>
-								</label>
-							</div>
-						</div>
-						<div class="col-sm-6 col-lg-9">
+					<div class="row">		
+					<div class="col-lg-3 col-md-3 col-sm-3" style="border-color: blue;">
+					<div><h4>Loai San Pham</h4></div>
+					<div><span>Thuoc Tru Sau</span></div>
+					<div><span>Thuoc Tri Benh</span></div>
+					<div><span>Thuoc Duong</span></div>
+					</div>			
+						<div class="col-lg-9 col-md-9 col-sm-9">
 							<div class="row">
 								<c:forEach var="sanpham" items="${listsanpham}">
-									<div class="col-sm-6 col-md-3">
+									<div class="col-sm-6 col-md-6 col-lg-3">
 										<a href="chitiet/${sanpham.getIdSanPham() }">
 											<div class="sanpham wow bounceIn">
 												<img alt="hinh"

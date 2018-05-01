@@ -32,13 +32,13 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="QuanLy">
           <a class="nav-link" href="quanly">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Admin</span>
+            <span class="nav-link-text">Tình Trạng Đơn Hàng</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
             <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Charts</span>
+            <span class="nav-link-text">Sản Phẩm</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="NhanVien">

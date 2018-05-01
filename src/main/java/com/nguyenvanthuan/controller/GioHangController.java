@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
+import org.apache.catalina.connector.Request;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +76,7 @@ public class GioHangController {
 					chitiethoadonservice.ThemChiTietHD(chiTietHoaDon);
 				}
 				System.out.println("Them thanh Cong");
+				httpSession.removeAttribute("giohang");
 			} else {
 				System.out.println("Them tb");
 			}
