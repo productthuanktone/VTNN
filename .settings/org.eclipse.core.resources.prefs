@@ -1,5 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/nguyenvanthuan/controller/DangNhapController.java=UTF-8
+encoding//src/main/java/com/nguyenvanthuan/controller/NhanVienController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/NewDangNhap.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/NewHeaderQL.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/NewIndex.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/NewNhanVien.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/NewThemNhanVien.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/ThemNV.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/themkh.jsp=UTF-8

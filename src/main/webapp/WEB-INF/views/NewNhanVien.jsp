@@ -1,22 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<jsp:include page="NewHeaderQL.jsp"></jsp:include>
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">Tables</li>
-      </ol>
-      <!-- Example DataTables Card-->
       <div class="card mb-3">
+      <c:if test="${error != null }">
+          <span style="color: red;">${error }</span>
+          </c:if>
         <div class="card-header">
           <i class="fa fa-table"></i> Bảng Nhân Viên</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
+              <thead style="background: cadetblue;">
                 <tr>
                   <th>STT</th>
                   <th>Họ Tên</th>
@@ -27,7 +21,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tfoot>
+              <tfoot  style="background: cadetblue;">
                 <tr>
                   <th>STT</th>
                   <th>Họ Tên</th>
@@ -50,7 +44,7 @@
                         <td>${nhanvien.getGioitinhNhanVien() }</td>
                         <td  style="color: #DD0000">${nhanvien.getEmailNhanVien() }</td>
                         <td>${nhanvien.getDiachiNhanVien() }</td>
-                        <td></td>
+                        <td><a class="xoa" data-id="${nhanvien.getIdNhanVien()}"><i class="fa fa-trash" aria-hidden="true"></i></a>/<a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                  </tr>
                 </c:forEach>
 <!--                End Danh Sach Nhan Vien -->
@@ -61,4 +55,4 @@
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
     </div>
-   <jsp:include page="NewFooterQL.jsp"></jsp:include>
+    <script src="resources/assets/js/custom.js"></script>

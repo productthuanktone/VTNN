@@ -24,7 +24,7 @@ import com.nguyenvanthuan.service.SanPhamService;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("giohang")
+@SessionAttributes("giohang,tendangnhap")
 public class TrangChuController {
 	@Autowired
 	SessionFactory sessionFactory;
@@ -41,7 +41,7 @@ public class TrangChuController {
 		}
 		modelMap.addAttribute("listsanpham", listsp);
 		
-		return "NewTrangChu";
+		return "NewIndex";
 	}
 
 }

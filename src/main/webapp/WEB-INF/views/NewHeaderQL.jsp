@@ -9,21 +9,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>Quản Lý</title>
   <!-- Bootstrap core CSS-->
-  <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='<c:url value="resources/vendor/bootstrap/css/bootstrap.min.css"/>' />
+ <link rel="stylesheet" type="text/css" href='<c:url value="resources/vendor/font-awesome/css/font-awesome.min.css"/>' />
+  <link rel="stylesheet" type="text/css" href='<c:url value="resources/vendor/datatables/dataTables.bootstrap4.css"/>' />
   <!-- Custom fonts for this template-->
-  <link href="resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
   <!-- Custom styles for this template-->
-  <link href="resources/css/sb-admin.css" rel="stylesheet">
+   <link rel="stylesheet" href='<c:url value="resources/css/sb-admin.css"/>' />
+  
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Quản Lý</a>
+    <a class="navbar-brand" href="/VTNN/">Quản Lý</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,14 +57,14 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
+            <span class="nav-link-text">Nhân Viên</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Navbar</a>
+              <a id="danhsachnv" style="cursor: pointer;">Danh Sách</a>
             </li>
             <li>
-              <a href="cards.html">Cards</a>
+              <a id="themnv" style="cursor: pointer;">Thêm Nhân Viên</a>
             </li>
           </ul>
         </li>
@@ -229,4 +230,4 @@
       </ul>
     </div>
   </nav>
-  <div class="content-wrapper">
+  <div class="content-wrapper" id="body">

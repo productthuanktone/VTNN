@@ -12,6 +12,83 @@ $(document).ready(
 			$("#cot4").click(function() {
 				$(this).addClass("activebl");
 			});
+			$("#dangnhap").click(function() {
+				$(this).addClass("active");
+				$("#dangki").removeClass("active");
+				$(".divdangki").hide();
+				$(".divdangnhap").show();
+			});
+			$("#themnv").click(function() {
+				$.ajax({
+					url : "/VTNN/nhanvien/themnv",
+					type : "GET",
+					success : function(value) {
+
+						$("#body").html(value)
+					}
+				});
+			});
+			$("#danhsachnv").click(function() {
+				$.ajax({
+					url : "/VTNN/nhanvien/danhsachnv",
+					type : "GET",
+
+					success : function(value) {
+
+						$("#body").html(value)
+					}
+				});
+			});
+			$("#dangki").click(function() {
+				$(this).addClass("active");
+				$("#dangnhap").removeClass("active");
+				$(".divdangki").show();
+				$(".divdangnhap").hide();
+			});
+			$("#btnthemnv").click(function() {
+				var sodt = $("#sodienthoai").val();
+				var hoten = $("#hoten").val();
+				var gt = $(".gioitinh").val();
+				var email = $("#email").val();
+				var diachi = $("#diachi").val();
+				var taikhoan = $("#tentaikhoan").val();
+				var mk = $("#matkhau").val();
+				var ltk = $("#loaitaikhoan").val();
+				$.ajax({
+					url : "/VTNN/nhanvien/them",
+					type : "POST",
+					data : {
+						hoten:hoten,
+						sodienthoai:sodt,
+						gioitinh:gt,
+						email:email,
+						diachi:diachi,
+						tentaikhoan:taikhoan,
+						matkhau:mk,
+						loaitaikhoan:ltk
+					},
+					success : function(value) {
+
+						$("#body").html(value)
+					}
+				});
+			});
+			$(".xoa").click(function() {
+				var id = $(this).attr("data-id");
+				// var id = $(this).text();
+				// alert(id);
+				$.ajax({
+					url : "/VTNN/nhanvien/xoa",
+					type : "GET",
+					data : {
+						id : id
+					},
+					success : function(value) {
+
+						$("#body").html(value)
+					}
+				});
+			});
 			$(".btn-giohang").click(
 					function() {
 						var tensp = $(".tensp").text();
@@ -27,7 +104,7 @@ $(document).ready(
 								.text();
 						var soluong = $(this).closest("tr").find(".soluong")
 								.attr("data-soluong");
-						//alert(tensp+" "+id+" "+gia+" "+soluong);
+						// alert(tensp+" "+id+" "+gia+" "+soluong);
 						$.ajax({
 							url : "/VTNN/api/themgiohang",
 							type : "GET",
@@ -62,9 +139,12 @@ $(document).ready(
 				$(".giatien").each(
 						function() {
 							var gia = $(this).text();
-							var soluong = $(this).closest("tr").find(".soluongcuagiohang").val();
+							var soluong = $(this).closest("tr").find(
+									".soluongcuagiohang").val();
 							var tongtien = parseInt(gia) * soluong;
-							var format1 = parseFloat(tongtien).toFixed().replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+							var format1 = parseFloat(tongtien).toFixed()
+									.replace(/(\d)(?=(\d{3})+\.)/g, "$1,")
+									.toString();
 
 							if (!ischange) {
 								$(this).html(format1);
@@ -73,7 +153,8 @@ $(document).ready(
 							tongtiensp = tongtiensp + parseFloat(format1);
 						});
 
-				var formatsp = tongtiensp.toFixed(3).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+				var formatsp = tongtiensp.toFixed(3).replace(
+						/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
 				$("#tongtiensp").html(" " + formatsp + "");
 			}
 
@@ -89,18 +170,18 @@ $(document).ready(
 								/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
 						$(this).closest("tr").find(".giatien").html(format);
 						Gantongtien(true);
-//						$.ajax({
-//							url : "/VTNN/api/capnhatgiohang1",
-//							type : "GET",
-//							data : {
-//								soluong : soluong,
-//								idsp : id,
-//								gia : gia1,
-//							},
-//							success : function(value) {
-//
-//							}
-//						});
+						// $.ajax({
+						// url : "/VTNN/api/capnhatgiohang1",
+						// type : "GET",
+						// data : {
+						// soluong : soluong,
+						// idsp : id,
+						// gia : gia1,
+						// },
+						// success : function(value) {
+						//
+						// }
+						// });
 					});
 			$(".btnxoa").click(
 					function() {
@@ -139,9 +220,19 @@ $(document).ready(
 								gia : gia,
 							},
 							success : function(value) {
-								
+
 							}
 						});
-						
-					});	
+
+					});
+			var transparentDemo = true;
+			var fixedTop = false;
+
+			$(window).scroll(function(e) {
+			    oVal = ($(window).scrollTop() / 170);
+			    $(".blur").css("opacity", oVal);
+			    
+			});
+
+
 		});

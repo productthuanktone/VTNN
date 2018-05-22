@@ -53,12 +53,6 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" rel="tooltip"
-						title="Follow us on Twitter" data-placement="bottom"
-						href="https://twitter.com/CreativeTim" target="_blank"> <i
-							class="fa fa-twitter"></i>
-							<p class="d-lg-none">Twitter</p>
-					</a></li>
 					<li class="nav-item"><a
 						href="documentation/tutorial-components.html" target="_blank"
 						class="nav-link"> Chăm sóc khách hàng</a></li>
@@ -160,25 +154,27 @@
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<nav class="footer-nav">
-					<ul>
-						<li><a href="http://www.creative-tim.com">Creative Tim</a></li>
-						<li><a href="http://blog.creative-tim.com">Blog</a></li>
-						<li><a href="http://www.creative-tim.com/license">Licenses</a></li>
-					</ul>
-				</nav>
-				<div class="credits ml-auto">
-					<span class="copyright"> © <script>
-						document.write(new Date().getFullYear())
-					</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
-					</span>
-				</div>
+		<div id="footer" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 col-md-6 wow tada textfooter">
+				<p>
+					<span class="title-footer">THÔNG TIN CỬA HÀNG</span>
+				</p>
+				<span>Hoàng Quân là một công ty uy tín, luôn đảm bảo chất
+					lượng sản phẩm tốt nhất cho khách hàng.</span>
 			</div>
+			<div class="col-sm-6 col-md-6 wow tada textfooter">
+				<p>
+					<span class="title-footer">LIÊN HỆ</span>
+				</p>
+				<span>Địa chỉ: 60 Thạnh Lộc, xã Thạnh Phước, uyện Giồng
+					Giềng, tỉnh Kiên Giang.</span><br /> <span>Email:
+					thuanb1401193@student.ctu.edu.vn</span><<br> <span>Số điện
+					thoại: 01263241992</span>
+			</div>
+
 		</div>
-	</footer>
+	</div>
 </body>
 
 <!-- Core JS Files -->

@@ -5,5 +5,6 @@ import java.util.List;
 import com.nguyenvanthuan.entity.NhanVien;
 
 public interface NhanVienImp {
-	List<NhanVien> LayDangSachSanPham(int nhanvienbatdau);
+	List<NhanVien> LayDangSachNhanVien(int nhanvienbatdau);
+	boolean  XoaNV(int id);
 }

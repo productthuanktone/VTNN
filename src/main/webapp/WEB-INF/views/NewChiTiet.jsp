@@ -21,7 +21,8 @@
 <!-- Bootstrap core CSS     -->
 <link rel="stylesheet"
 	href='<c:url value="../resources/assets/css/bootstrap.min.css"/>' />
-<link rel="stylesheet" href='<c:url value="../resources/Style/style.css"/>' />
+<link rel="stylesheet"
+	href='<c:url value="../resources/Style/style.css"/>' />
 <link rel="stylesheet"
 	href='<c:url value="../resources/assets/css/paper-kit.css?v=2.1.0"/>' />
 
@@ -30,7 +31,8 @@
 <link rel="stylesheet"
 	href='<c:url value="../resources/assets/css/demo.css"/>' />
 <!--     Fonts and icons     -->
-<link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../resources/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 <link rel="stylesheet"
 	href='<c:url value="../resources/assets/css/nucleo-icons.css"/>' />
 
@@ -53,12 +55,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" rel="tooltip"
-						title="Follow us on Twitter" data-placement="bottom"
-						href="https://twitter.com/CreativeTim" target="_blank"> <i
-							class="fa fa-twitter"></i>
-							<p class="d-lg-none">Twitter</p>
-					</a></li>
+
 					<li class="nav-item"><a
 						href="documentation/tutorial-components.html" target="_blank"
 						class="nav-link"> Chăm sóc khách hàng</a></li>
@@ -70,8 +67,11 @@
 							Đăng Ký</a></li>
 					<li class="nav-item"><a style="color: red !important"
 						href="quanly" class="nav-link">Đăng Nhập</a></li>
-					<li class="nav-item" id="giohang"><a class="nav-link" href="../giohang/"><i
-							class="fa fa-shopping-cart"></i><div class="sogiohang"><span>${soluonggiohang }</span></div></a></li>
+					<li class="nav-item" id="giohang"><a class="nav-link"
+						href="../giohang/"><i class="fa fa-shopping-cart"></i>
+						<div class="sogiohang">
+								<span>${soluonggiohang }</span>
+							</div></a></li>
 
 				</ul>
 			</div>
@@ -107,14 +107,14 @@
 		<div class="main">
 			<div class="container">
 				<div class="row" id="trangchitiet">
-					<div class="mymenu col-sm-2 col-md-2">
-						<h3 class="h">Danh Mục</h3>
-						<ul class="mymenu">
-							<c:forEach var="loaisp" items="${loaisp }">
-								<li><a href="#">${loaisp.getTenLSP() }</a></li>
-							</c:forEach>
-						</ul>
-					</div>
+<!-- 					<div class="mymenu col-sm-2 col-md-2"> -->
+<!-- 						<h3 class="h">Danh Mục</h3> -->
+<!-- 						<ul class="mymenu"> -->
+<%-- 							<c:forEach var="loaisp" items="${loaisp }"> --%>
+<%-- 								<li><a href="#">${loaisp.getTenLSP() }</a></li> --%>
+<%-- 							</c:forEach> --%>
+<!-- 						</ul> -->
+<!-- 					</div> -->
 					<div class="col-sm-8 col-md-8">
 						<div class="row">
 							<div class="col-sm-4 col-md-4">
@@ -154,28 +154,31 @@
 						<span>${sanpham.getChitietSanPham()}</span>
 					</div>
 				</div>
+				<div style="height: 300px;"></div>
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<nav class="footer-nav">
-					<ul>
-						<li><a href="http://www.creative-tim.com">Creative Tim</a></li>
-						<li><a href="http://blog.creative-tim.com">Blog</a></li>
-						<li><a href="http://www.creative-tim.com/license">Licenses</a></li>
-					</ul>
-				</nav>
-				<div class="credits ml-auto">
-					<span class="copyright"> © <script>
-						document.write(new Date().getFullYear())
-					</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
-					</span>
-				</div>
+		<div id="footer" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 col-md-6 wow tada textfooter">
+				<p>
+					<span class="title-footer">THÔNG TIN CỬA HÀNG</span>
+				</p>
+				<span>Hoàng Quân là một công ty uy tín, luôn đảm bảo chất
+					lượng sản phẩm tốt nhất cho khách hàng.</span>
 			</div>
+			<div class="col-sm-6 col-md-6 wow tada textfooter">
+				<p>
+					<span class="title-footer">LIÊN HỆ</span>
+				</p>
+				<span>Địa chỉ: 60 Thạnh Lộc, xã Thạnh Phước, uyện Giồng
+					Giềng, tỉnh Kiên Giang.</span><br /> <span>Email:
+					thuanb1401193@student.ctu.edu.vn</span><<br> <span>Số điện
+					thoại: 01263241992</span>
+			</div>
+
 		</div>
-	</footer>
+	</div>
 </body>
 
 <!-- Core JS Files -->

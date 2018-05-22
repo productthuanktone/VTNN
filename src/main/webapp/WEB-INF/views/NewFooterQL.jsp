@@ -43,6 +43,7 @@
     <!-- Custom scripts for this page-->
     <script src="resources/js/sb-admin-datatables.min.js"></script>
     <script src="resources/js/sb-admin-charts.min.js"></script>
+    <script src="resources/assets/js/custom.js"></script>
   </div>
 </body>
 

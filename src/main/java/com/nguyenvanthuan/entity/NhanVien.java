@@ -38,7 +38,7 @@ public class NhanVien {
 		this.sanphams = sanphams;
 	}
 
-	int getIdNhanVien() {
+	public int getIdNhanVien() {
 		return idNhanVien;
 	}
 

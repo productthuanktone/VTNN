@@ -529,4 +529,14 @@ html, body {
 .hinhgiohang{
 	    width: 80px;
 }
+.btn-giohang1{
+	width: 170px;
+}
+.letfct{
+	text-align: center;
+}
 /* trangiohang */
+/* dang nhap */
+.active{
+	color: green;
+}

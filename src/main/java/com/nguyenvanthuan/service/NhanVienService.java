@@ -13,8 +13,13 @@ import com.nguyenvanthuan.entity.NhanVien;
 public class NhanVienService implements NhanVienImp {
 	@Autowired
 	NhanVienDAO nhanVienDAO;
-	public List<NhanVien> LayDangSachSanPham(int sanphambatdau) {
-		return nhanVienDAO.LayDangSachSanPham(sanphambatdau);
+	public List<NhanVien> LayDangSachNhanVien(int sanphambatdau) {
+		return nhanVienDAO.LayDangSachNhanVien(sanphambatdau);
+	}
+	@Override
+	public boolean XoaNV(int id) {
+		
+		return nhanVienDAO.XoaNV(id);
 	}
 
 }
